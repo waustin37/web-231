@@ -1,0 +1,29 @@
+body{
+    margin: 0;
+    font-family: "Oswald", Verdana, Arial, sans-serif;
+}
+h1, h2, h3, h4 {
+    background-color: #3C275A;
+    color:white;
+    border: 1px solid #D6A800;
+    padding: 10px;
+}
+#container {
+    margin-top: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+li{
+    color: #453674;
+}
+a{
+    text-decoration:none;
+    color: #453674;
+}
+a:hover{
+    background-color: #D6A800;
+    color:#4F3674;
+}
+a:visited{
+    color:#3C275A;
+}
