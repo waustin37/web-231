@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    <html lang="en">
+<!--
+    Title: payroll.html
+    Author: William John Austin
+    Date: 01/10/2023
+    Description: Payroll Page Exercise for Web 231
+-->
+        <head>
+            <title>WEB 231 - Enterprise JavaScript I</title>
+
+         <!--CSS stylesheets-->
+            <link href="../global.css" type="text/css" rel="stylesheet">
+            <link href="../site.css" type="text/css" rel="stylesheet">
+            <link href="Austin-payroll.css" type="text/css" rel="stylesheet">
+
+         <!--Font Family-->
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        </head>
+         
+
+        <body>
+            <div id="container">
+                <h1 class="app-header">Payroll System</h1>
+                <h3 id="txtEmployee1">Employee record 1</h3>
+                    <ul>
+                        <li id="txtFirstNameHarry"></li>
+                        <li id="txtLastNamePotter"></li>
+                        <li id="txtAddressHarry"></li>
+                        <li id="txtHireDateHarry"></li>
+                        <li id="txtPayRateHarry"></li>
+                    </ul>
+                <h3 id="txtEmployee2">Employee record 2</h3>
+                    <ul>
+                        <li id="txtFirstNameHermione"></li>
+                        <li id="txtLastNameGranger"></li>
+                        <li id="txtAddressHermione"></li>
+                        <li id="txtHireDateHermione"></li>
+                        <li id="txtPayRateHermione"></li>
+                    </ul>
+                <h3 id="txtEmployee3">Employee record 3</h3>
+                    <ul>
+                        <li id="txtFirstNameRon"></li>
+                        <li id="txtLastNameWeasley"></li>
+                        <li id="txtAddressRon"></li>
+                        <li id="txtHireDateRon"></li>
+                        <li id="txtPayRateRon"></li>
+                    </ul>
+
+         <!--JavaScript-->
+                    <script>
+
+                        // variables
+                        let firstName = "Harry";
+                        let lastName = "Potter";
+                        let address = "4 Privet Drive, Little Whinging, Surrey";
+                        let hireDate = new Date().toLocaleDateString("en-US");
+                        let payRateTotal = 99.88;
+                        let payRate = payRateTotal.toFixed(1);
+                        let firstNameHG = "Hermione";
+                        let lastNameHG = "Granger";
+                        let addressHG = "8 Heathgate, Hampstead Garden Suburb, London";
+                        let hireDateHG = new Date().toLocaleDateString("en-US");
+                        let payRateTotalHG = 75.86;
+                        let payRateHG = payRateTotalHG.toFixed(1);
+                        let firstNameRW = "Ron";
+                        let lastNameRW = "Granger";
+                        let addressRW = "The Burrow, Ottery St. Catchpole";
+                        let hireDateRW = new Date().toLocaleDateString("en-US");
+                        let payRateTotalRW = 84.23;
+                        let payRateRW = payRateTotalRW.toFixed(1);
+
+                        // output
+                        document.getElementById("txtFirstNameHarry").innerHTML=firstName;
+                        document.getElementById("txtLastNamePotter").innerHTML=lastName;
+                        document.getElementById("txtAddressHarry").innerHTML=address;
+                        document.getElementById("txtHireDateHarry").innerHTML=hireDate;
+                        document.getElementById("txtPayRateHarry").innerHTML=payRate;
+                        document.getElementById("txtFirstNameHermione").innerHTML=firstNameHG;
+                        document.getElementById("txtLastNameGranger").innerHTML=lastNameHG;
+                        document.getElementById("txtAddressHermione").innerHTML=addressHG;
+                        document.getElementById("txtHireDateHermione").innerHTML=hireDateHG;
+                        document.getElementById("txtPayRateHermione").innerHTML=payRateHG;
+                        document.getElementById("txtFirstNameRon").innerHTML=firstNameRW;
+                        document.getElementById("txtLastNameWeasley").innerHTML=lastNameRW;
+                        document.getElementById("txtAddressRon").innerHTML=addressRW;
+                        document.getElementById("txtHireDateRon").innerHTML=hireDateRW;
+                        document.getElementById("txtPayRateRon").innerHTML=payRateRW;
+                    </script>
+
+         <!--Back to Landing-->
+                <a href="../index.html" class="return-home">Return</a>
+            </div>
+        </body>
+</html>

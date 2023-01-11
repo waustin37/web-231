@@ -1,0 +1,12 @@
+/**
+    Title: payroll.css
+    Author: William John Austin
+    Date: 01/10/2023
+    Description: Styling for payroll.html
+*/
+ul{
+    border: dotted 1px red;
+}
+.app-header{
+    text-align: center;
+}
