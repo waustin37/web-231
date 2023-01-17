@@ -1,7 +1,14 @@
-
+#container {
+    width: 600px;
+    margin: 0 auto;
+}
 #btn {
     margin-left: 25px;
     margin-bottom: 25px;
+}
+#btn:hover {
+        background-color: #D6A800;
+        color: #4F3674;
 }
 .app-header{
     text-align: center;
@@ -13,5 +20,5 @@
 #card-contents {
     text-align: center;
     font-size: 28px;
-    
+
 }
