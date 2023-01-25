@@ -1,0 +1,69 @@
+<!--
+    Title: Austin-number-game.html
+    Author: William John Austin
+    Date: 01/24/2023
+    Description: Number Game for Web 231
+-->
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>WEB 231 - Enterprise JavaScript I</title>
+
+         <!--CSS stylesheets-->
+            <link href="../global.css" type="text/css" rel="stylesheet">
+            <link href="../site.css" type="text/css" rel="stylesheet">
+            <link href="Austin-number-game.css" type="text/css" rel="stylesheet">
+
+         <!--Font Family-->
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        </head>
+
+        <body>
+            <div id="container">
+                <h1 class="app-header">Welcome to the numbers game!</h1>
+
+        <!--First Card:Input (Guess)-->
+                <div id="card">
+                    <p id="card-title">Pick a number between 1 and 10</p>
+                    <div id="form">
+                        <label for="txtMyNumber" id="form-field">Guess the number:</label>
+                        <input type="text" class ="input" id="txtMyNumber" name="number"><br>
+                        <button onclick="myFunction()" id="btnSubmit">Submit</button>
+                    </div>
+                </div>
+
+        <!--Second Card:Output (Did you guess correctly?)-->
+                <div id="card">
+                    <p id="card-title">Results</p>
+                    <div id="card-contents"></div>
+                </div>
+
+        <!--JavaScript-->
+                <script>
+                    const rnd = Math.floor ((Math.random() * 10) + 1); //generates a random number between 1 and 10  
+                    
+                    function myFunction(){
+
+                        //Variables
+                        let myNumber = document.getElementById("txtMyNumber").value;
+                        let results;
+                        if (myNumber>rnd) {
+                                results = "The number is less than " + myNumber;
+                            }
+                        else if (myNumber<rnd) {
+                                results = "The number is greater than " + myNumber;
+                            }
+                        else if (myNumber==rnd) {
+                                results = "Congratulations! You picked the correct number"
+                            }
+
+                        //Output
+                        document.getElementById("card-contents").innerHTML = results
+                     }
+                </script>
+
+        <!--Back to Landing-->
+                <a href="../index.html" class="return-home">Return</a>
+            </div>
+        </body>
+    </html>
