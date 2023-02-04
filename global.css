@@ -86,8 +86,11 @@
 .return-home:visited {
     color: #3c275A;
 }
-#btnMyCourse{
-    cursor: pointer;
-    margin-bottom: 15px;
-
+.drop-down-menu {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
