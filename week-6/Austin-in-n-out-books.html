@@ -1,0 +1,176 @@
+<!--
+    Title: Austin-in-n-out-book.html
+    Author: William John Austin
+    Date: 02/07/2023
+    Description: Book Game for Web 231
+-->
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>WEB 231 - Enterprise JavaScript I</title>
+
+         <!--CSS stylesheets-->
+            <link href="../global.css" type="text/css" rel="stylesheet">
+            <link href="../site.css" type="text/css" rel="stylesheet">
+            <link href="Austin-in-n-out-books.css" type="text/css" rel="stylesheet">
+
+         <!--Font Family-->
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        </head>
+
+        <body>
+            <div id="container">
+                <h1 class="app-header">Welcome to In-n-Out Books</h1>
+
+        <!--First Card:Input (Choose a List)-->
+                <div id="card">
+                    <p id="card-title">My Favorites</p>
+                    <div id="form">
+                        <label for="sequence" id="form-field">Choose a listing:</label>
+                            <select name="sequence" id="favoriteList" class="drop-down-menu">
+                                <option value="select">--Select--</option>
+                                <option value="books">Top 3 Favorite Books</option>
+                                <option value="authors">Top 3 Favorite Authors</option>
+                            </select>
+                        
+                        <br>
+                        <button id="btnDisplayListing">Display Listing</button>
+                    </div>
+                </div>
+        <!--Back to Landing-->
+            <a href="../index.html" class="return-home">Return</a>
+
+        <!--Second Card:Output (List Results)-->
+                <!--Favorite Books List-->
+                <div id="favorite-books">
+                    <p id="card-title">Top 3 Favorite Books</p>
+                    <div id="card-contents">
+                        <table>
+                            <tr>
+                                <th>ISBN</th>
+                                <th>Title</th>
+                                <th>Pages</th>
+                            </tr>
+                            <tr>
+                                <td id="txtISBN1"></td>
+                                <td id="txtTitle1"></td>
+                                <td id="txtPages1"></td>
+                            </tr>
+                            <tr>
+                                <td id="txtISBN2"></td>
+                                <td id="txtTitle2"></td>
+                                <td id="txtPages2"></td>
+                            </tr>
+                            <tr>
+                                <td id="txtISBN3"></td>
+                                <td id="txtTitle3"></td>
+                                <td id="txtPages3"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <!--Favorite Authors List-->
+                <div id="favorite-authors">
+                    <p id="card-title">Top 3 Favorite Authors</p>
+                    <div id="card-contents">
+                        <table>
+                            <tr>
+                                <th>Name</th>
+                                <th>Genre</th>
+                            </tr>
+                            <tr>
+                                <td id="txtName1"></td>
+                                <td id="txtGenre1"></td>
+                            </tr>
+                            <tr>
+                                <td id="txtName2"></td>
+                                <td id="txtGenre2"></td>
+                            </tr>
+                            <tr>
+                                <td id="txtName3"></td>
+                                <td id="txtGenre3"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+        <!--JavaScript-->
+                <script>
+
+                    //onload Variable List
+                    const book1 = {
+                        isbn:"0545582889", 
+                        title:"Harry Potter and the Sorcerer's Stone",
+                        pages:"336"    
+                    }
+                    const book2 = {
+                        isbn:"0307588364",
+                        title:"Gone Girl",
+                        pages:"432"
+                    }
+                    const book3 = {
+                        isbn:"0439023528",
+                        title:"The Hunger Games",
+                        pages:"384"
+                    }
+                    const author1 = {
+                        name:"J.K. Rowling",
+                        genre: "Fantasy/Mystery"
+                    }
+                    const author2 = {
+                        name:"Charles Dickens",
+                        genre: "Historical Fiction"
+                    }
+                    const author3 = {
+                        name:"Ron Chernow",
+                        genre: "Biography"
+                    }
+                    let books = document.getElementById("favorite-books");
+                    let authors = document.getElementById("favorite-authors");
+
+                    books.style.display="none"; //There should be nothing displayed in the second card on page load
+                    authors.style.display="none"
+
+                    //Establishing the Button and OnClick Event
+                    const element = document.getElementById("btnDisplayListing");
+                    element.addEventListener ("click", myFunction);
+
+                    //Lists
+                    function myFunction(){
+                        let choice=document.getElementById("favoriteList").value;
+                        if (choice =="books") {
+                            result =
+                                books.style.display="block"
+                                authors.style.display="none"
+                                document.getElementById("txtISBN1").innerHTML=book1.isbn;
+                                document.getElementById("txtTitle1").innerHTML=book1.title;
+                                document.getElementById("txtPages1").innerHTML=book1.pages;
+                                document.getElementById("txtISBN2").innerHTML=book2.isbn;
+                                document.getElementById("txtTitle2").innerHTML=book2.title;
+                                document.getElementById("txtPages2").innerHTML=book2.pages;
+                                document.getElementById("txtISBN3").innerHTML=book3.isbn;
+                                document.getElementById("txtTitle3").innerHTML=book3.title;
+                                document.getElementById("txtPages3").innerHTML=book3.pages;
+                        }
+                        else if (choice=="authors") {
+                            result =
+                                authors.style.display="block";
+                                books.style.display="none";
+                                document.getElementById("txtName1").innerHTML=author1.name;
+                                document.getElementById("txtGenre1").innerHTML=author1.genre;
+                                document.getElementById("txtName2").innerHTML=author2.name;
+                                document.getElementById("txtGenre2").innerHTML=author2.genre;
+                                document.getElementById("txtName3").innerHTML=author3.name;
+                                document.getElementById("txtGenre3").innerHTML=author3.genre
+                        }
+                        else if (choice=="select"){
+                            result =
+                            books.style.display="none";
+                            authors.style.display="none"
+                        }
+                    }
+                </script>
+            </div>
+        </body>
+    </html>
