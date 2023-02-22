@@ -1,0 +1,90 @@
+<!--
+    Title: Austin-alphabet-game.html
+    Author: William John Austin
+    Date: 02/22/2023
+    Description: Alphabet Game for Web 231
+-->
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <title>WEB 231 - Enterprise JavaScript I</title>
+
+         <!--CSS stylesheets-->
+            <link href="../global.css" type="text/css" rel="stylesheet">
+            <link href="../site.css" type="text/css" rel="stylesheet">
+            <link href="Austin-alphabet-game.css" type="text/css" rel="stylesheet">
+
+         <!--Font Family-->
+            <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&display=swap" rel="stylesheet">
+        </head>
+
+        <body>
+            <div id="container">
+                <h1 class="app-header">Welcome to the Alphabet Game!</h1>
+
+        <!--First Card:Input (Pick a Letter Position)-->
+                <div id="card">
+                    <p id="card-title">Alphabet Number Form</p>
+                    <div id="form">
+                        <label for="txtPosition" id="form-field">Alphabet Letter Position</label>
+                            <input type="text" class="txtPosition" id="txtPosition">
+                        
+                        <br>
+                        <button id="btnFindLetter">Find Letter</button>
+                    </div>
+                </div>
+        <!--Back to Landing-->
+            <a href="../index.html" class="return-home">Return</a>
+
+        <!--Second Card:Alphabet-->
+
+                <div id="alphabet">
+                    <p id="card-title">Letters in the Alphabet</p>
+                    <div id="card-contents-1">
+
+                    </div>
+                </div>
+        <!--Third Card:Output (Letter Position)-->
+                <div id="results">
+                    <p id="card-title">Results</p>
+                    <div id="card-contents-2">
+
+                    </div>
+                </div>
+
+        <!--JavaScript-->
+                <script>
+
+                    //Variable List
+                    const alphabet = [" A", " B", " C", " D", " E", " F", " G", " H", " I", " J", " K", " L", " M", " N",
+                                         " O", " P", " Q", " R", " S", " T", " U", " V", " W", " X", " Y", " Z"];
+
+                    let alphabetOutput = ""; 
+                    for (let x in alphabet) {
+                        alphabetOutput += alphabet[x]+ ", "; 
+                    }
+
+                    document.getElementById("card-contents-1").innerHTML=alphabetOutput.slice(0, -2); //Get rid of trailing comma
+                    
+
+                    //Button
+                    const element = document.getElementById("btnFindLetter");
+                    element.addEventListener ("click", alphabetFunction);
+
+
+                    function alphabetFunction(){
+                        let pos = document.getElementById("txtPosition").value;
+                        let letter = alphabet[pos-1];
+                        if (letter===undefined) {
+                            result = "There are not " + pos + " letters in the alphabet";
+                        }
+                        else {
+                            result = letter + " is at position " + pos + " in the alphabet";
+                        }
+                        document.getElementById("card-contents-2").innerHTML=result
+                    }
+
+                </script>
+            </div>
+        </body>
+    </html>
